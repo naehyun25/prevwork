@@ -1,0 +1,22 @@
+#wrap{
+    width: 100%;
+    max-width: 1840px;
+    margin: 0 auto;
+}
+.headerInner{
+    display: flex;
+    align-items: baseline;
+    justify-content: baseline;
+    padding: 2rem 0;
+}
+.logo{
+    width: 6%;
+}
+nav{
+    padding: 0rem 8rem 2rem 2rem;
+}
+nav ul{
+    display: flex;
+}
+.users{
+    display: flex;}

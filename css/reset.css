@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Noto+Sans+KR:wght@300;500;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");/* roboto */
+*{margin: 0; padding: 0;}
+a{text-decoration: none; color:#222}
+a:hover{color:#000}
+html{font-size:62.5%; overflow-x:hidden; overflow-y:scroll;} /*1rem->10px */
+body, input, textarea, select, button, table{
+  font-family: "Georgia","Times","serif", "Roboto"; 
+  color: #000; 
+  line-height: 1.75; 
+  font-weight: 300; 
+  font-size: 1.6rem;}
+body{
+    -webkit-font-smoothing: antialiased; 
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 1.5;
+    box-sizing: border-box;
+    background-color: #f8f2e9;
+}
+em, address{font-style:normal;}
+dl,
+ul,
+ol,
+li,
+menu { list-style: none; } 
+h1,
+h2,
+h3
+h4,
+h5,
+h6 { font-size: 1.3rem; 
+ color: #000;} 
+ img,
+fieldset { border: 0 none; } 
+button { border: 0; } 
