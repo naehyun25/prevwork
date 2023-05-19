@@ -36,15 +36,26 @@ document.addEventListener('scroll', function(){
   if(scrollTop > prevScroll) {
     // scrollDown
     slideDown(scrollTop);
-    
-  } else {
+    steakyHeader(scrollTop);
+} else {
     // scrollUp
     slideUp(scrollTop);
+    steakyHeader(scrollTop);
   }
   prevScroll = scrollTop
 })
+// header
+function steakyHeader(scrollTop){
+    const Header =  document.querySelector("header")
+    if(scrollTop>100){
+        console.log(scrollTop)
+        Header.classList.add("fixed");
+    }else{
+        Header.classList.remove("fixed");
+    }
+}
 
-//SlideDown  
+//SlideDown  - > reFactory수정요망 
 const SlideWrap = document.querySelector(".MainTalent_Carousel");
 const Carousels = document.querySelectorAll(".Carousel");
 const firstCarousel = document.querySelector(".attract");

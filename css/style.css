@@ -5,7 +5,7 @@
 }
 .innerWrap{
     width: 100%;
-    max-width: 1800px;    
+    max-width: 1800px;
     margin: 0 auto;
     height: 100%;
     padding: 0px 15px;
@@ -83,9 +83,9 @@ nav ul li a:hover {
     width: 50%;
 }
 h1{
-    font-size:8.6rem; 
-    font-weight: 100; 
-    letter-spacing: -0.1rem; 
+    font-size:8.6rem;
+    font-weight: 100;
+    letter-spacing: -0.1rem;
     line-height: 9.4rem;
     word-wrap: break-word;
     padding-right: 10%;
@@ -307,7 +307,7 @@ h1{
     bottom: 0;
     left: 0;
     background:linear-gradient(180deg, rgba(0, 0, 0, 0) 19.27%, rgba(38, 30, 23, 0.6) 60.42%);
-    
+
 }
 .MainGoals_contents__textWrap .text{
     bottom: 0;
@@ -352,7 +352,7 @@ h1{
 #MainTalent .title{
     font-size: 8.4rem;
     width: 100%;
-    max-width: 1700px;    
+    max-width: 1700px;
     margin: 0 auto 6.4rem;
     padding: 0px 15px;
     line-height: 9rem;
@@ -385,17 +385,55 @@ h1{
 .increase .imageWrap{background: url(../assets/image/section4-slide02.webp) no-repeat;}
 .promote .imageWrap{ background: url(../assets/image/section4-slide03.webp) no-repeat;}
 .deliver .imageWrap{ background: url(../assets/image/section4-slide04.webp) no-repeat;}
-.Carousel .imageWrap{width: 50%; background-size: contain; background-position: center;} 
+.Carousel .imageWrap{width: 50%; background-size: contain; background-position: center;}
 
 .fixed{
     position:fixed;
     bottom: 0;
     margin: 0 auto ;
     width: 100%;
-    max-width: 1840px;    
+    max-width: 1840px;
 }
+/* sec6.MainMembers */
 #MainMembers{
-    margin-top: 290rem;
+    margin-top: 321rem;
     width: 100%;
 }
+#MainMembers .title{
+    font-size: 6.5rem;
+}
+.members_Introduce{
+    width: 32%;
+    height: 100%;
+}
+.memberWrap{
+    justify-content: space-between;
+    height: 100%;
+    align-items: center;
+    padding: 2rem 1rem; 
+    border-top: 1px solid #000;
+}
+.Robert{
+    border-bottom: 1px solid #000;
+}
+.member_image{
+    width: 91px;
+    height: 100px;
+    overflow: hidden;
+}
+.member_image img{width: 100%; height: 100%; object-fit:cover;}
+.member_desc{
+    width: calc(100% - 20%);
+    flex-direction: column;
+    padding:1rem;
+}
+.member_name{font-size: 2.9rem;}
+.member_jop{font-size: 2.1rem; line-height: 2.2rem; word-wrap: break-word;}
 
+.members_Slide_Wrap{
+    width: calc(100% - 35%);
+    overflow: hidden;
+    height: 658px;
+}
+.members_Slide{height: 100%;}
+.slide{width : calc(100% /2); flex-shrink: 1; height: 100%; background-color: #ACE5FD;}
