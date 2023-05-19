@@ -1,9 +1,14 @@
 @charset "UTF-8";
-.fontGothic{font-family: 'Didact Gothic', sans-serif, "Roboto";}
+.fontGothic{font-family: 'Gothic A1', sans-serif, "Roboto";}
+/* positon */
+.pr{position: relative;}
+.pa{position: absolute;}
+/* float */
 .fl { float: left; } 
 .fr { float: right; } 
 .cb { clear: both; } 
 .cf::after { content: " "; display: block; clear: both; } 
+.df{display: flex;}
 /* margin-bottom */
 .mb16 {margin-bottom: 16px;} 
 .mb32 {margin-bottom: 32px;} 
@@ -16,11 +21,3 @@
 .text1{font-size : 18px;}
 .text2{font-size : 16px;}
 /* color */
-.innerWrap{
-    width: 100%;
-    max-width: 1320px;    
-    margin: 0 auto;
-    height: 100%;
-    padding: 0px 15px;
-    /* padding */
-}
