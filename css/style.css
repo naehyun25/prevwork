@@ -11,9 +11,19 @@
     padding: 0px 15px;
 }
 /* header */
-.headerInner{
+.stickyHeader{
+    position:fixed;
+    top: 0;
+    z-index: 2;
+    background-color: #f8f2e9;
+    max-width: 1840px;
+}
+header{
+    width: 100%;
     margin: 0 auto;
     padding: 2rem 0;
+}
+.headerInner{
     width: 100%;
     height: 50px;
 }
@@ -359,20 +369,20 @@ h1{
 }
 .MainTalent_Carousel{
     width: 100%;
-    height: 96rem;
+    height: 376rem;
     /* overflow: hidden; */
     /*fixed width값 수정요망 */
 }
 .Carousel{
     width: 100%;
-    height: 96rem;
+    height: 94rem;
     justify-content: space-between;
     position: absolute;
 }
-.attract{background-color: #ACE5FD;}
-.increase{background-color: #fdf18b; bottom: -96rem;}
-.promote{background-color: #f6c99f; bottom: -192rem;}
-.deliver{background-color: #aae69e; bottom: -288rem;}
+.attract{background-color: #ACE5FD; top:0}
+.increase{background-color: #fdf18b; top: 94rem;}
+.promote{background-color: #f6c99f; top: 188rem;}
+.deliver{background-color: #aae69e; top: 282rem;}
 .Carousel_textWrap{
     padding: 2rem;
     width: 42%;
@@ -389,14 +399,13 @@ h1{
 
 .fixed{
     position:fixed;
-    bottom: 0;
     margin: 0 auto ;
     width: 100%;
     max-width: 1840px;
 }
 /* sec6.MainMembers */
 #MainMembers{
-    margin-top: 321rem;
+    /* margin-top: 321rem; */
     width: 100%;
 }
 #MainMembers .title{
@@ -405,6 +414,7 @@ h1{
 .members_Introduce{
     width: 32%;
     height: 100%;
+    margin-right : 2rem;
 }
 .memberWrap{
     justify-content: space-between;
@@ -412,6 +422,7 @@ h1{
     align-items: center;
     padding: 2rem 1rem; 
     border-top: 1px solid #000;
+    margin-left: 2rem;
 }
 .Robert{
     border-bottom: 1px solid #000;
@@ -429,11 +440,69 @@ h1{
 }
 .member_name{font-size: 2.9rem;}
 .member_jop{font-size: 2.1rem; line-height: 2.2rem; word-wrap: break-word;}
-
-.members_Slide_Wrap{
-    width: calc(100% - 35%);
-    overflow: hidden;
+.swiper{
+    width: 80%;
     height: 658px;
+    overflow: hidden;
 }
-.members_Slide{height: 100%;}
-.slide{width : calc(100% /2); flex-shrink: 1; height: 100%; background-color: #ACE5FD;}
+.members01{background-color: #f6c99f;}
+.members02{
+    background: url(../assets/image/section5-member01.webp) no-repeat;
+    background-size: cover;
+
+}
+.members03{background-color: #ee732f;}
+.members04{background-color: #FDF18B;}
+.members05{
+    background: url(../assets/image/section5-member04.webp) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.members06{background-color: #f6c99f;}
+.members07{background-color: #ebbdfb;}
+.members08{background-color: #d8d1be;}
+/* sec7.MainRecommendation*/
+#MainRecommendation{
+    font-size: 4.8rem;
+    width: 100%;
+    max-width: 1700px;
+    margin: 10rem auto ;
+    padding: 0px 15px;
+    line-height: 4.8rem;
+    position: relative;
+}
+.slideGallery{
+    width: 100%;
+    max-width: 1376px;
+    margin: 0 auto;
+    height: 400px;
+    padding: 10rem;
+    overflow: hidden;
+}
+.MainRecommendation_innerWrap{
+    width: 100%;
+}
+.textBox{
+    flex-shrink: 0;
+    width: 100%;
+    transform: translateX(0);
+    transition: all 0.3s;
+    padding: 10rem ;
+}
+.disney{background-color: #ebbdfb;}
+.bank{background-color: #aae69e;}
+.health{background-color: #ade5fe;}
+.recommedText{
+    /* padding: 10rem; */
+}
+.prevBtn{
+    top:50%;
+    left:0;
+    cursor: pointer;
+}
+.nextBtn{
+    top:50%;
+    left: 100%;
+    cursor: pointer;
+    z-index: 1;
+}
