@@ -127,12 +127,14 @@ prevBtn.addEventListener("click",function(){
     backWard(nowIdx)
 })
 function forWard(idx){
+    console.log(idx)
     if(idx==RecommendSlide.length){prevIdx==idx
     }else{
         RecommendSlide[idx].style.transform = `translateX(-${RecommendSlide[0].clientWidth*idx}px)`
     }
 };
 function backWard(idx){
+    console.log(idx)
     if(idx==0){prevIdx==idx
     }else{
         RecommendSlide[idx].style.transform = `translateX(${RecommendSlide[0].clientWidth*idx}px)`
