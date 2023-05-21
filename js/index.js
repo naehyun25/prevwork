@@ -33,13 +33,6 @@ brandSlide.addEventListener("mouseout",startSlide)
 let prevScroll = document.documentElement.scrollTop || 0
 document.addEventListener('scroll', function(e){
     let scrollTop = window.scrollY
-    console.log(
-        "스크롤값",scrollTop,
-        "윈도우 높이",window.innerHeight,
-        "화면에서 갤러리까지 위치", SlideWrap.offsetTop,
-        "갤러리높이값", SlideWrap.clientHeight,
-        "갤러리하나의 높이값", Carousels[0].clientHeight
-    )
   if(scrollTop > prevScroll) {
     // scrollDown
     slideUp(scrollTop);
@@ -64,68 +57,56 @@ function steakyHeader(scrollTop){
 //SlideDown  - > reFactory수정요망
 const SlideWrap = document.querySelector(".MainTalent_Carousel");
 const Carousels = document.querySelectorAll(".Carousel");
-const firstCarousel = document.querySelector(".attract");
-const secondCarousel = document.querySelector(".increase");
-const thirdCarousel = document.querySelector(".promote");
-const lastCarousel = document.querySelector(".deliver");
-
-
+let SlideLocation=SlideWrap.offsetTop;
+let windowH = window.innerHeight;
+let CarouselH = Carousels[0].clientHeight;
+console.log(CarouselH)
 function slideUp(scrollTop){
-    if(scrollTop>SlideWrap.offsetTop-window.innerHeight+Carousels[0].clientHeight){
+    if(scrollTop>SlideLocation-windowH+CarouselH){
         Carousels[0].classList.add('fixed');
-        Carousels[0].style.top=window.innerHeight-Carousels[0].clientHeight+"px"
+        Carousels[0].style.top=windowH-CarouselH+"px"
     }
-    if(scrollTop>SlideWrap.offsetTop-window.innerHeight+Carousels[0].clientHeight*2){
-        Carousels[1].classList.add('fixed');
-        Carousels[1].style.top=window.innerHeight-Carousels[0].clientHeight+"px"
-        Carousels[0].classList.remove('fixed');
-        Carousels[0].style.top=0+"px"
+    for(let a=1; a<=2; a++){
+        if(scrollTop>SlideLocation-windowH+CarouselH*(a+1)){
+            Carousels[a].classList.add('fixed');
+            Carousels[a].style.top=windowH-CarouselH+"px"
+            Carousels[a-1].classList.remove('fixed');
+            Carousels[a-1].style.top=0+"px"
+        }
     }
-    if(scrollTop>SlideWrap.offsetTop-window.innerHeight+Carousels[0].clientHeight*3){
-        Carousels[2].classList.add('fixed');
-        Carousels[2].style.top=window.innerHeight-Carousels[0].clientHeight+"px"
-        Carousels[1].classList.remove('fixed');
-        Carousels[1].style.top=Carousels[0].clientHeight+"px"
-    }
-    if(scrollTop>SlideWrap.offsetTop-window.innerHeight+Carousels[0].clientHeight*4){
+    if(scrollTop>SlideLocation-windowH+CarouselH*4){
         Carousels.forEach((slide)=>{slide.classList.remove('fixed')})
         Carousels[2].classList.remove('fixed');
-        Carousels[2].style.top=Carousels[0].clientHeight*3+"px"
+        Carousels[2].style.top=CarouselH*3+"px"
     }
 }
 
 function slideDown(scrollTop){
-    if(
-        scrollTop<SlideWrap.offsetTop-window.innerHeight+Carousels[0].clientHeight*4){
+    if(scrollTop<SlideLocation-windowH+CarouselH*4){
             Carousels[2].classList.add('fixed');
             Carousels[2].style.top=109+"px"
         }
+    for(let a=2; a>=1; a--){
+        if(scrollTop<SlideLocation-windowH+CarouselH*(a+1)){
+                Carousels[a].classList.remove('fixed');
+                Carousels[a].style.top=CarouselH*a+"px"
+                Carousels[a-1].classList.add('fixed');
+                Carousels[a-1].style.top=109+"px"
+            }
+    }
     if(
-        scrollTop<SlideWrap.offsetTop-window.innerHeight+Carousels[0].clientHeight*3){
-            Carousels[2].classList.remove('fixed');
-            Carousels[2].style.top=1880+"px"
-            Carousels[1].classList.add('fixed');
-            Carousels[1].style.top=109+"px"
-        }
-    if(
-        scrollTop<SlideWrap.offsetTop-window.innerHeight+Carousels[0].clientHeight*2){
-            Carousels[1].classList.remove('fixed');
-            Carousels[1].style.top=940+"px"
-            Carousels[0].classList.add('fixed');
-            Carousels[0].style.top=109+"px"
-        }
-    if(
-        scrollTop<SlideWrap.offsetTop-window.innerHeight+Carousels[0].clientHeight*1){
+        scrollTop<SlideLocation-windowH+CarouselH*1){
             Carousels[0].classList.remove('fixed');
             Carousels[0].style.top=0+"px"
         }
     }
+
 //draggable Slide - Swifer 
 const swiper = new Swiper('.swiper', {
     slidesPerView: 2,
     direction: 'horizontal',
     spaceBetween: 10,
-    loop: true,
+    loop: false,
     mousewheel : true,
 });
 
